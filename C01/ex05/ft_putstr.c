@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 07:04:14 by zharzi            #+#    #+#             */
-/*   Updated: 2022/04/03 07:07:50 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/20 20:31:46 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,3 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i++]);
 	}
 }
-/*
-**int	main(void)
-**{
-**	char	str[] = "Charlie EST la chocolaterie";
-**	ft_putstr(str);
-**	return (0);
-**}
-*/
