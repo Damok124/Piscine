@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 23:41:20 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/14 01:02:11 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/17 03:41:35 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_print_reverse_alphabet(void)

@@ -1,46 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printcombn.c                                    :+:      :+:    :+:   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 08:28:11 by zharzi            #+#    #+#             */
-/*   Updated: 2022/05/31 22:16:38 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/20 11:34:13 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		ft_putchar(str[i]);
-}
+#include <stdio.h>
 
 void	ft_print_combn(int n)
 {
-	int tab[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
-	while (n)
-		while
-			if (tab[n] > 9)
-				tab[n-1] += 1;
-				tab[n] = tab[n-1] + 1;
+	char	tab[10];
+	char	c;
+	int		i;
+	int		x;
+
+	i = -1;
+	c = '0';
+	while (++i < n)
+		tab[i] = c++;
+	tab[n] = '\0';
+	// poursuivre en int, gerer les 0 avec un modulo overflow par rapport a n
+	i = 0;
+	while (tab[i])
+	{
+		x = x + tab[i] - '0';
+		if (tab[i + 1])
+			x = x * 10;
+		i++;
+	}
+	printf("atoi %d\n", x);
 }
 
 int	main(void)
 {
 	int	n;
 
-	n = 2;
-	ft_printcomb(n);
+	n = 3;
+	ft_print_combn(n);
 	return (0);
 }

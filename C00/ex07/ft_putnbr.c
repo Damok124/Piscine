@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 10:08:02 by zharzi            #+#    #+#             */
-/*   Updated: 2022/04/02 10:15:15 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/17 03:43:19 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,4 @@ void	ft_putnbr(int nb)
 		ft_putnbr(nb / 10);
 		ft_putchar('0' + nb % 10);
 	}
-}
-
-int	main(void)
-{
-	int	nb;
-
-	nb = -2147483648;
-	ft_putnbr(nb);
-	return (0);
 }

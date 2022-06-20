@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 09:01:39 by zharzi            #+#    #+#             */
-/*   Updated: 2022/04/02 09:28:09 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/17 03:42:21 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,3 @@ void	ft_print_comb(void)
 		c = b + 1;
 	}
 }
-/*
-**int	main(void)
-**{
-**	ft_print_comb();
-**	return (0);
-**}
-*/

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 23:41:20 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/14 00:24:30 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/17 03:41:53 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_print_alphabet(void)
