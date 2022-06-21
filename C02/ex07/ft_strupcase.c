@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:12:21 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/20 17:35:03 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/21 14:38:02 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@ char	*ft_strupcase(char *str)
 	int	i;
 
 	i = 0;
-	if (str[i] == '\0')
-		return (str);
 	while (str[i] != '\0')
 	{
 		if (str[i] > 96 && str[i] < 123)
