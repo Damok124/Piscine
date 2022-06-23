@@ -1,32 +1,37 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <bsd/string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/22 18:24:10 by zharzi            #+#    #+#             */
+/*   Updated: 2022/06/22 18:37:09 by zharzi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*char *ft_strcpy(char *dest, char *src)
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		;
+	return (i);
+}
+
+unsigned int	ft_strlcpy(char *dst, char *src, unsigned int size)
+{
+	unsigned int	i;
 
 	i = 0;
-	while (src[i])
+	if (size == 0)
+		return (ft_strlen(src));
+	while (i < (size - 1) && src[i])
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
-}*/
-
-int main(void)
-{
-	char dest[] = "Detruire";
-	char src[] = "Construire";
-	int n;
-
-	n = 5;
-	//char dest1[] = "Detruire";
-	//char src1[] = "Construire";
-
-	printf("%li\n", strlcpy(dest, src, n));
-	//printf("%s\n", ft_strcpy(dest1, src1));
-	return (0);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
