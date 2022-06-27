@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:50:47 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/29 10:47:07 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/26 18:58:31 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,3 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-/*
-**int	main(void)
-**{
-**char str[] = "";
-**
-**	printf("resultat final %d\n", ft_strlen(str));
-**	return (0);
-**}
-*/

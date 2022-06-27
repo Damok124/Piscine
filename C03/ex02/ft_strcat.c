@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:12:32 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/27 15:31:14 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/26 18:04:54 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,3 @@ char	*ft_strcat(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-/*
-**int	main(void)
-**{
-**	char	dest[30] = "Champion ";
-**	char	src[30] = "du monde";
-**
-**	printf("classique %s\n", strcat(dest, src));
-**	printf("personnel %s\n", ft_strcat(dest, src));
-**	return (0);
-**}
-*/

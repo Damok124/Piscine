@@ -1,26 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 23:50:51 by zharzi            #+#    #+#             */
-/*   Updated: 2022/06/26 18:58:43 by zharzi           ###   ########.fr       */
+/*   Created: 2022/06/26 18:07:46 by zharzi            #+#    #+#             */
+/*   Updated: 2022/06/26 18:57:52 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putstr(char *str)
+int	ft_strlen(char *str)
 {
-	int		i;
-	char	c;
+	int	i;
 
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strstr(char *str, char *to_find)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (str[i])
 	{
-		c = str[i];
-		write(1, &c, 1);
+		while (str[i + j] == to_find[j])
+		{
+			j++;
+			if (j == ft_strlen(to_find))
+				return (&str[i]);
+		}
+		i++;
 	}
+	return (NULL);
 }

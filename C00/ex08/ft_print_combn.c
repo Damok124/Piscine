@@ -6,7 +6,7 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 08:28:11 by zharzi            #+#    #+#             */
-/*   Updated: 2022/06/20 20:18:38 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/25 10:51:58 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_print_combn(int n)
 	}
 	comb = -1;
 	a = -1;
-	while (++comb < last)
+	while (++comb <= last)
 	{
 		if (ft_check_combn(comb, n))
 		{
@@ -69,6 +69,4 @@ void	ft_print_combn(int n)
 			ft_write_combn(comb, n);
 		}
 	}
-	write(1, ", ", 2);
-	ft_write_combn(comb, n);
 }

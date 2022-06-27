@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:32:28 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/26 23:06:24 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/26 18:05:07 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,3 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	dest[i] = '\0';
 	return (dest);
 }
-
-/*int	main(void)
-**{
-**	unsigned int	nb;
-**	char			src[] = "Bonjour, ";
-**	char			dest[] = "comment ça va?\n";
-**
-**	nb = 3;
-**	printf("classique %s", strncat(dest, src, nb));
-**	printf("personnel %s", ft_strncat(dest, src, nb));
-**	return (0);
-**}
-*/
