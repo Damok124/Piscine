@@ -3,17 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 11:57:51 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/29 15:32:03 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/27 02:34:47 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**#include <unistd.h>
-**#include <stdio.h>
-*/
 int	ft_iterative_factorial(int nb)
 {
 	int	res;
@@ -30,12 +26,3 @@ int	ft_iterative_factorial(int nb)
 	}
 	return (res);
 }
-/*
-**int	main(void)
-**{
-**	int nb;
-**	nb = 6;
-**	printf("%d", ft_iterative_factorial(nb));
-**	return (0);
-**}
-*/

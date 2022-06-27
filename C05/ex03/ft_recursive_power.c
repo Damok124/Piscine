@@ -3,17 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 21:37:41 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/30 15:21:33 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/27 02:35:29 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**#include <unistd.h>
-**#include <stdio.h>
-*/
 int	ft_recursive_power(int nb, int power)
 {
 	if (power < 0)
@@ -24,15 +20,3 @@ int	ft_recursive_power(int nb, int power)
 		return (nb * ft_recursive_power(nb, --power));
 	return (0);
 }
-/*
-**int	main(void)
-**{
-**	int	nb;
-**	int	power;
-**
-**	nb = 2;
-**	power = 3;
-**	printf("%d", ft_recursive_power(nb, power));
-**	return (0);
-**}
-*/

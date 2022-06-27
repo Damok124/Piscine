@@ -3,18 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 13:20:28 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/31 11:37:18 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/27 02:36:49 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**#include <unistd.h>
-**#include <stdio.h>
-**#include <stdlib.h>
-*/
 int	ft_is_prime(int nb)
 {
 	int	i;
@@ -41,11 +36,3 @@ int	ft_find_next_prime(int nb)
 	}
 	return (nb);
 }
-/*
-**int	main(int argc, char **argv)
-**{
-**	(void)argc;
-**	printf("%d", ft_find_next_prime(atoi(argv[1])));
-**	return (0);
-**}
-*/

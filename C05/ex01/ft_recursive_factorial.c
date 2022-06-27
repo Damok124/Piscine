@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 11:57:51 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/29 21:37:11 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/27 02:34:59 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,3 @@ int	ft_recursive_factorial(int nb)
 		return (res = nb * (ft_recursive_factorial(nb - 1)));
 	return (0);
 }
-/*
-**int	main(void)
-**{
-**	int	nb;
-**
-**	nb = 1;
-**	printf("%d", ft_recursive_factorial(nb));
-**	return (0);
-**}
-*/

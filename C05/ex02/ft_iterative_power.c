@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 21:37:41 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/30 15:21:36 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/27 02:35:10 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,3 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (res);
 }
-/*
-**int	main(void)
-**{
-**	int	nb;
-**	int	power;
-**
-**	nb = 23;
-**	power = 5;
-**	printf("%d", ft_iterative_power(nb, power));
-**	return (0);
-**}
-*/

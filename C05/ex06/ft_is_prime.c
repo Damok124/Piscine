@@ -3,18 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 13:20:28 by zharzi            #+#    #+#             */
-/*   Updated: 2022/01/31 11:37:20 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/27 02:36:30 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**#include <unistd.h>
-**#include <stdio.h>
-**#include <stdlib.h>
-*/
 int	ft_is_prime(int nb)
 {
 	int	i;
@@ -32,11 +27,3 @@ int	ft_is_prime(int nb)
 	}
 	return (1);
 }
-/*
-**int	main(int argc, char **argv)
-**{
-**	(void)argc;
-**	printf("%d", ft_is_prime(atoi(argv[1])));
-**	return (0);
-**}
-*/
