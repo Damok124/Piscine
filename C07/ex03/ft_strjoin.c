@@ -3,17 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 14:26:51 by zharzi            #+#    #+#             */
-/*   Updated: 2022/04/04 11:03:33 by zharzi           ###   ########.fr       */
+/*   Created: 2022/06/27 18:31:52 by zharzi            #+#    #+#             */
+/*   Updated: 2022/06/27 20:01:43 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**#include <unistd.h>
-**#include <stdio.h>
-*/
 #include <stdlib.h>
 
 int	ft_strlen(char *str)
@@ -26,65 +22,51 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strjoin_prep(int size, char **strs, char *sep)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		total;
+	char	*res;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j])
+	i = -1;
+	total = 0;
+	if (!size)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		res = (char *)malloc(sizeof(char));
+		res[0] = '\0';
+		return (res);
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (++i < size)
+		total += ft_strlen(strs[i]);
+	total += ft_strlen(sep) * (size - 1);
+	res = (char *)malloc(sizeof(char) * total);
+	return (res);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	char	*final;
+	char	*res;
+	int		x;
 	int		i;
-	int		lenght;
+	int		j;
 
+	x = -1;
 	i = -1;
+	j = -1;
+	res = ft_strjoin_prep(size, strs, sep);
 	if (!size)
+		return (res);
+	while (++i < size)
 	{
-		final = malloc(sizeof(char));
-		final[0] = '\0';
-		return (final);
+		if (x > 0)
+		{
+			while (sep[++j])
+				res[++x] = sep[j];
+			j = -1;
+		}
+		while (strs[i][++j])
+			res[++x] = strs[i][j];
+		j = -1;
 	}
-	while (++i != size)
-		lenght += ft_strlen(strs[i]);
-	lenght += ft_strlen(sep) * (size - 1);
-	final = (char *)malloc(sizeof(char) * size);
-	i = 0;
-	while (i != size - 1)
-	{
-		ft_strcat(final, strs[i]);
-		ft_strcat(final, sep);
-		i++;
-	}
-	ft_strcat(final, strs[i]);
-	return (final);
+	return (res);
 }
-/*
-**int	main(void)
-**{
-**	char	*strs[] = {"hello", "salut", "test"};
-**	int		size;
-**
-**	size = sizeof(strs) / sizeof(char *);
-**	printf("Taille total : %zd\n", sizeof(strs));
-**	printf("Taille total : %d\n", size);
-**	char	*str = ft_strjoin(size, strs, "|");
-**	printf("Resultat : %s\n", str);
-**	free(str);
-**	str = NULL;
-**	return (0);
-**}
-*/

@@ -3,17 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zharzi <zharzi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:25:24 by zharzi            #+#    #+#             */
-/*   Updated: 2022/02/02 17:31:35 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/27 18:15:24 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**#include <unistd.h>
-**#include <stdio.h>
-*/
 #include <stdlib.h>
 
 int	ft_strlen(char *src)
@@ -41,11 +37,3 @@ char	*ft_strdup(char *src)
 	dup[i] = '\0';
 	return (dup);
 }
-/*
-**int	main(int argc, char **argv)
-**{
-**	argc++;
-**	printf("%s", ft_strdup(argv[1]));
-**	return (0);
-**}
-*/
