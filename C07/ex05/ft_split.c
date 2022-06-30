@@ -6,7 +6,7 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 20:39:56 by zharzi            #+#    #+#             */
-/*   Updated: 2022/06/30 14:41:06 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/30 20:01:19 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,22 @@ char	**ft_split(char *str, char *charset)
 	}
 	res[ft_strs_count(str, charset)] = NULL;
 	return (res);
+}
+
+int	main(void)
+{
+	char	*str = "Bonjour";
+	char	**str2 = &str;
+	int		i;
+
+	i = -1;
+	str2 = ft_split("Bonjour ! Peut-etre+- te faut-il des vacances!+++", " -+");
+	while (str2[++i])
+	{
+		printf("final : %s\n", str2[i]);
+	}
+	while (--i)
+		free(str2[i]);
+	free(str2);
+	return (0);
 }
