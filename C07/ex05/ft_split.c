@@ -6,7 +6,7 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 20:39:56 by zharzi            #+#    #+#             */
-/*   Updated: 2022/06/30 20:01:19 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/06/30 20:43:00 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char	**ft_split(char *str, char *charset)
 	i = -1;
 	j = -1;
 	a = -1;
-	res = (char **)malloc(sizeof(char *) * ft_strs_count(str, charset));
+	res = (char **)malloc(sizeof(void *) * (ft_strs_count(str, charset) + 1));
 	while (++i < ft_strlen(str) && a < ft_strs_count(str, charset))
 	{
 		if (i == 0 || (ft_sep(charset, str[i - 1]) && !ft_sep(charset, str[i])))
@@ -99,22 +99,4 @@ char	**ft_split(char *str, char *charset)
 	}
 	res[ft_strs_count(str, charset)] = NULL;
 	return (res);
-}
-
-int	main(void)
-{
-	char	*str = "Bonjour";
-	char	**str2 = &str;
-	int		i;
-
-	i = -1;
-	str2 = ft_split("Bonjour ! Peut-etre+- te faut-il des vacances!+++", " -+");
-	while (str2[++i])
-	{
-		printf("final : %s\n", str2[i]);
-	}
-	while (--i)
-		free(str2[i]);
-	free(str2);
-	return (0);
 }
