@@ -6,7 +6,7 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 08:28:11 by zharzi            #+#    #+#             */
-/*   Updated: 2022/06/25 10:51:58 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/03 13:40:14 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,10 @@ void	ft_print_combn(int n)
 			ft_write_combn(comb, n);
 		}
 	}
+}
+
+int	main(void)
+{
+	ft_print_combn(3);
+	return (0);
 }
