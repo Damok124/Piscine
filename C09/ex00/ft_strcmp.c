@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_str.h                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/02 11:13:03 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/02 11:14:29 by zharzi           ###   ########.fr       */
+/*   Created: 2022/01/20 21:39:43 by zharzi            #+#    #+#             */
+/*   Updated: 2022/06/26 18:03:57 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_STR_H
-# define FT_STOCK_STR_H
-
-typedef struct s_stock_str
+int	ft_strcmp(char *s1, char *s2)
 {
-	int		size;
-	char	*str;
-	char	*copy;
-}			t_stock_str;
+	int	i;
 
-#endif
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
+}

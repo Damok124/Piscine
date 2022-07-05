@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 14:25:24 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/05 15:12:30 by zharzi           ###   ########.fr       */
+/*   Created: 2022/04/03 07:08:02 by zharzi            #+#    #+#             */
+/*   Updated: 2022/06/20 20:32:13 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char *src)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src && src[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dup;
-	int		i;
-
-	i = 0;
-	dup = malloc((sizeof(char) * ft_strlen(src)) + 1);
-	while (src[i])
+	while (str[i])
 	{
-		dup[i] = src[i];
 		i++;
 	}
-	dup[i] = '\0';
-	return (dup);
+	return (i);
 }

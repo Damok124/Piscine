@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.c                                         :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 23:24:30 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/02 03:44:57 by zharzi           ###   ########.fr       */
+/*   Created: 2022/01/12 19:59:33 by zharzi            #+#    #+#             */
+/*   Updated: 2022/06/17 03:40:18 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_point.h"
-#include <stdio.h>
-
-void	set_point(t_point *point)
+void	ft_putchar(char c)
 {
-	point->x = 42;
-	point->y = 21;
-}
-
-int	main(void)
-{
-	t_point	point;
-
-	set_point(&point);
-	printf("%d\n", point.x);
-	printf("%d\n", point.y);
-	return (0);
+	write(1, &c, 1);
 }
