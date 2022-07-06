@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 07:04:14 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/06 23:36:54 by zharzi           ###   ########.fr       */
+/*   Created: 2022/01/17 22:58:55 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/06 23:37:54 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
+#include "ft.h"
 
-void	ft_putstr(char *str)
+void	ft_swap(int *a, int *b)
 {
-	int	i;
+	int	c;
 
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i++]);
-	}
+	c = *b;
+	*b = *a;
+	*a = c;
 }

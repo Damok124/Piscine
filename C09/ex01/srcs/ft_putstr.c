@@ -6,14 +6,11 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 07:04:14 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/06 23:36:54 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/06 23:42:03 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
+#include "ft.h"
 
 void	ft_putstr(char *str)
 {

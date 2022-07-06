@@ -6,7 +6,7 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:50:47 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/01 17:57:46 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/06 15:26:12 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define FT_H
 
 void	ft_putchar(char c);
-void	ft_swap(int *a, int *b);
 void	ft_putstr(char *str);
-int		ft_strlen(char *str);
 int		ft_strcmp(char *s1, char *s2);
+int		ft_strlen(char *str);
+void	ft_swap(int *a, int *b);
 
 #endif

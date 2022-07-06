@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 07:04:14 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/06 23:36:54 by zharzi           ###   ########.fr       */
+/*   Created: 2022/04/03 07:08:02 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/06 23:37:47 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
+#include "ft.h"
 
-void	ft_putstr(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		ft_putchar(str[i++]);
+		i++;
 	}
+	return (i);
 }

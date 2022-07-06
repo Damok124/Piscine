@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 07:04:14 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/06 23:36:54 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/01 17:50:47 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/06 19:56:52 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
+#ifndef FT_H
+# define FT_H
 
-void	ft_putstr(char *str)
-{
-	int	i;
+# include <unistd.h>
 
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i++]);
-	}
-}
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_strlen(char *str);
+void	ft_swap(int *a, int *b);
+
+#endif
