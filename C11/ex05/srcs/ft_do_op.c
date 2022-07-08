@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_do_op.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 00:56:02 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 00:35:18 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/08 13:54:50 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/08 13:57:36 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
-{
-	int	i;
+#include "do_op.h"
 
-	i = -1;
-	while (++i < length)
-	{
-		(*f)(tab[i]);
-	}
+int	ft_do_op(int a, int b, int o, int(**ft)(int, int))
+{
+	int	res;
+
+	if (o == 5)
+		res = 0;
+	else
+		res = (ft[o])(a, b);
+	return (res);
 }

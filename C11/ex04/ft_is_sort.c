@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 00:56:02 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 00:35:18 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/08 01:32:17 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/08 01:39:10 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
+int	ft_is_sort(int *tab, int length, int(*f)(int, int))
 {
 	int	i;
 
 	i = -1;
-	while (++i < length)
+	while (++i < length - 1)
 	{
-		(*f)(tab[i]);
+		if ((*f)(tab[i], tab[i + 1]) < 0)
+			return (0);
 	}
+	return (1);
 }

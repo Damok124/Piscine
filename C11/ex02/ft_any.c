@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 00:56:02 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 00:35:18 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/08 01:02:00 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/08 01:08:23 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
+int	ft_any(char **tab, int(*f)(char*))
 {
 	int	i;
 
 	i = -1;
-	while (++i < length)
+	while (tab[++i])
 	{
-		(*f)(tab[i]);
+		if ((*f)(tab[i])!= 0)
+			return (1);
 	}
+	return (0);
 }

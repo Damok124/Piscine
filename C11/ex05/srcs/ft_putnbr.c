@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 00:56:02 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 00:35:18 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/08 13:55:09 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/08 14:30:48 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
-{
-	int	i;
+#include "do_op.h"
 
-	i = -1;
-	while (++i < length)
+void	ft_putnbr(int nb)
+{
+	long int	nbu;
+	char		c;
+
+	nbu = nb;
+	if (nbu < 0)
 	{
-		(*f)(tab[i]);
+		write(1, "-", 1);
+		nbu = nbu * -1;
 	}
+	if (nbu >= 10)
+		ft_putnbr(nbu / 10);
+	c = ((nbu % 10) + 48);
+	write(1, &c, 1);
 }

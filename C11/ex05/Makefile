@@ -6,21 +6,29 @@
 #    By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 17:12:24 by zharzi            #+#    #+#              #
-#    Updated: 2022/07/08 13:58:38 by zharzi           ###   ########.fr        #
+#    Updated: 2022/07/08 14:30:44 by zharzi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libdo-op.a
 
-SRCS = ./srcs/ft_putchar.c \
-./srcs/ft_putstr.c \
-./srcs/ft_strcmp.c \
-./srcs/ft_strlen.c \
-./srcs/ft_swap.c
+BINARY = do-op
 
-HEADER = ft.h
+SRCSDIR = ./srcs/
+
+SRCS = $(SRCSDIR)ft_add.c \
+	$(SRCSDIR)ft_sub.c \
+	$(SRCSDIR)ft_div.c \
+	$(SRCSDIR)ft_multi.c \
+	$(SRCSDIR)ft_mod.c \
+	$(SRCSDIR)ft_atoi.c \
+	$(SRCSDIR)ft_def_op.c \
+	$(SRCSDIR)ft_do_op.c \
+	$(SRCSDIR)ft_putnbr.c
 
 HEADERDIR = includes/
+
+HEADER = do_op.h
 
 OBJ = $(SRCS:.c=.o)
 
@@ -30,19 +38,21 @@ FLAGS = -Wall -Wextra -Werror
 
 IFLAG = -I$(HEADERDIR)
 
-all : libft.a
+all : libdo-op.a
+	-@$(CC) $(FLAGS) main.c $(IFLAG) -L. -ldo-op -o $(BINARY)
 
 %.o : %.c
-	$(CC) $(FLAGS) $(IFLAG) -o $@ -c $^
+	-@$(CC) $(FLAGS) $(IFLAG) -o $@ -c $^
 
-libft.a : $(OBJ) $(HEADERDIR)$(HEADER)
-	ar -rcs $(NAME) $^
+libdo-op.a : $(OBJ) $(HEADERDIR)$(HEADER)
+	-@ar -rcs $(NAME) $^
 
 clean :
-	rm -f $(OBJ)
+	-@rm -f $(OBJ)
 
 fclean : clean
-	rm -f $(NAME)
+	-@rm -f $(NAME)
+	-@rm -f $(BINARY)
 
 re : fclean all
 

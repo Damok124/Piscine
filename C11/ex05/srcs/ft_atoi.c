@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 00:56:02 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 00:35:18 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/08 13:54:56 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/08 13:57:53 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
+#include "do_op.h"
+
+int	ft_atoi(char *str)
 {
 	int	i;
+	int	k;
 
-	i = -1;
-	while (++i < length)
+	i = 0;
+	k = 1;
+	while (*str && ((*str >= '\t' && *str <= '\r') || *str == ' '))
+		str++;
+	while (*str && (*str == '+' || *str == '-'))
 	{
-		(*f)(tab[i]);
+		if (*str == '-')
+			k *= -1;
+		str++;
 	}
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		if (i != 0)
+			i *= 10;
+		i += *str - '0';
+		str++;
+	}
+	return (i * k);
 }
