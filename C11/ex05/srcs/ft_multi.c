@@ -6,9 +6,11 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 12:26:28 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 12:28:54 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/08 18:10:00 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "do_op.h"
 
 int	ft_multi(int a, int b)
 {

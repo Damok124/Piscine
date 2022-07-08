@@ -6,11 +6,11 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 13:55:09 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 14:30:48 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/08 18:09:38 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "do_op.h"
+#include <unistd.h>
 
 void	ft_putnbr(int nb)
 {

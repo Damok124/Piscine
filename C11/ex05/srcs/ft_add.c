@@ -6,9 +6,11 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 12:26:28 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 12:27:57 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/08 18:10:30 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "do_op.h"
 
 int	ft_add(int a, int b)
 {

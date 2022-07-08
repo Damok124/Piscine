@@ -6,18 +6,18 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 01:02:00 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 01:08:23 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/08 18:02:03 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char*))
+int	ft_any(char **tab, int (*f)(char*))
 {
 	int	i;
 
 	i = -1;
 	while (tab[++i])
 	{
-		if ((*f)(tab[i])!= 0)
+		if ((*f)(tab[i]) != 0)
 			return (1);
 	}
 	return (0);

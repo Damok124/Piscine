@@ -6,11 +6,11 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 01:09:13 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 01:31:24 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/08 18:01:54 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int length, int(*f)(char*))
+int	ft_count_if(char **tab, int length, int (*f)(char*))
 {
 	int	i;
 	int	n;
@@ -19,7 +19,7 @@ int	ft_count_if(char **tab, int length, int(*f)(char*))
 	n = 0;
 	while (++i < length)
 	{
-		if ((*f)(tab[i])!= 0)
+		if ((*f)(tab[i]) != 0)
 			n++;
 	}
 	return (n);

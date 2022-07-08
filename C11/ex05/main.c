@@ -6,7 +6,7 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 06:22:33 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/08 14:30:51 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/08 17:57:34 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	main(int ac, char *av[])
 	else if (o == 4 && b == 0)
 		write(1, "Stop : modulo by zero\n", 23);
 	else
-		ft_putnbr(ft_do_op(a, b, o, ft));/////syntaxe ft???
+		ft_putnbr(ft_do_op(a, b, o, ft));
 	return (0);
 }
