@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_string_tab.c                               :+:      :+:    :+:   */
+/*   ft_advanced_sort_string_tab.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 23:45:49 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/11 19:44:56 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/11 19:20:46 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/11 19:40:56 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,19 @@ void	ft_str_swap(char **tab, int a, int b)
 	tab[n] = NULL;
 }
 
-void	ft_sort_string_tab(char **tab)
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int	size;
 	int	i;
-	int	j;
 
 	size = ft_tablen(tab);
 	i = -1;
-	j = 0;
 	while ((++i) + 1 < size)
 	{
-		while ((tab[i][j] || tab[i + 1][j]) && tab[i][j] == tab[i + 1][j])
-			j++;
-		if ((tab[i][j] || tab[i + 1][j]) && tab[i][j] > tab[i + 1][j])
+		if ((cmp)(tab[i], tab[i + 1]) > 0)
 		{
 			ft_str_swap(tab, i, i + 1);
 			i = -1;
 		}
-		j = 0;
 	}
 }
