@@ -6,7 +6,7 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 23:15:03 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/12 00:39:04 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/13 10:55:32 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 void	ft_list_push_back(t_list **begin_list, void *data)
 {
 	t_list	*new;
+	t_list	*buf;
 
 	new = ft_create_elem(data);
-	while (*begin_list)
+	buf = *begin_list;
+	while (buf && buf != new)
 	{
-		if ((*begin_list)->next == NULL)
-			(*begin_list)->next = new;
-		else
-			*begin_list = (*begin_list)->next;
+		if (buf->next == NULL)
+			buf->next = new;
+		buf = (buf)->next;
 	}
 }

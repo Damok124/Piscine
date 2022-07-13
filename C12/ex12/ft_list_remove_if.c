@@ -6,7 +6,7 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:22:48 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/13 00:02:43 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/13 10:55:38 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void (*free_fct)(void *))
 	while (buf)
 	{
 		buf = *begin_list;
-		if ((cmp)(buf->data, data_ref) == 0)
+		if ((*cmp)(buf->data, data_ref) == 0)
 		{
-			(free_fct)(buf->data);
+			(*free_fct)(buf->data);
 			free(buf);
 			buf = buf->next;
 		}

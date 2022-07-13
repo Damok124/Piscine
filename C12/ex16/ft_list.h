@@ -6,7 +6,7 @@
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 22:21:52 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/13 00:16:08 by zharzi           ###   ########.fr       */
+/*   Updated: 2022/07/13 10:55:25 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), \
 void (*free_fct)(void *));
 void	ft_list_merge(t_list **begin_list1, t_list *begin_list2);
 void	ft_list_sort(t_list **begin_list, int (*cmp)());
+void	ft_list_reverse_fun(t_list *begin_list);
 
 #endif
