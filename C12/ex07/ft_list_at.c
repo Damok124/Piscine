@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_last.c                                     :+:      :+:    :+:   */
+/*   ft_list_at.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 23:05:46 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/12 23:22:55 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/12 11:59:52 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/12 12:04:59 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_last(t_list *begin_list)
+t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	t_list	*buf;
-	t_list	*end;
+	unsigned int	i;
 
-	buf = begin_list;
-	end = NULL;
+	i = 0;
 	while (begin_list)
 	{
-		end = buf;
-		buf = begin_list->next;
+		if (i == nbr)
+			return (begin_list);
+		begin_list = begin_list->next;
+		i++;
 	}
-	return (end);
+	return (NULL);
 }

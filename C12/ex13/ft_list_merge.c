@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_last.c                                     :+:      :+:    :+:   */
+/*   ft_list_merge.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 23:05:46 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/12 23:22:55 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/12 23:03:19 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/13 00:16:35 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_last(t_list *begin_list)
+void	ft_list_merge(t_list **begin_list1, t_list *begin_list2)
 {
 	t_list	*buf;
-	t_list	*end;
 
-	buf = begin_list;
-	end = NULL;
-	while (begin_list)
+	buf = *begin_list1;
+	while (buf && buf->next != begin_list2)
 	{
-		end = buf;
-		buf = begin_list->next;
+		if (buf->next == NULL)
+			buf->next = begin_list2;
+		else
+			buf = buf->next;
 	}
-	return (end);
 }

@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_last.c                                     :+:      :+:    :+:   */
+/*   ft_list_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 23:05:46 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/12 23:22:55 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/12 23:36:56 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/13 00:15:43 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_last(t_list *begin_list)
+void	ft_list_sort(t_list **begin_list, int (*cmp)())
 {
-	t_list	*buf;
-	t_list	*end;
+	t_list	*buf0;
+	t_list	*buf1;
+	t_list	*buf2;
 
-	buf = begin_list;
-	end = NULL;
-	while (begin_list)
+	buf0 = *begin_list;
+	while (buf0->next)
 	{
-		end = buf;
-		buf = begin_list->next;
+		buf1 = buf0;
+		buf2 = buf0->next;
+		if ((*cmp)(buf1->data, buf2->data) > 0)
+		{
+			buf2 = buf1;
+			buf1 = buf0;
+			buf0 = *begin_list;
+		}
+		else
+			buf0 = buf0->next;
 	}
-	return (end);
 }

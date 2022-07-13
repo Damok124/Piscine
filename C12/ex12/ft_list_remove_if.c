@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_last.c                                     :+:      :+:    :+:   */
+/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 23:05:46 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/12 23:22:55 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/12 16:22:48 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/13 00:02:43 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_last(t_list *begin_list)
+void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), \
+void (*free_fct)(void *))
 {
 	t_list	*buf;
-	t_list	*end;
 
-	buf = begin_list;
-	end = NULL;
-	while (begin_list)
+	buf = *begin_list;
+	while (buf)
 	{
-		end = buf;
-		buf = begin_list->next;
+		buf = *begin_list;
+		if ((cmp)(buf->data, data_ref) == 0)
+		{
+			(free_fct)(buf->data);
+			free(buf);
+			buf = buf->next;
+		}
+		else
+			buf = buf->next;
 	}
-	return (end);
 }
