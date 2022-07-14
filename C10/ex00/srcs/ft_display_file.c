@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   ft_display_file.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/12 16:22:48 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/14 03:58:57 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/13 21:32:57 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/14 22:41:53 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_files.h"
 
-void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), \
-void (*free_fct)(void *))
+void	ft_display_file(int fd)
 {
-	t_list	*buf;
+	int		ret;
+	int		size;
+	char	buf[BUFFER_SIZE + 1];
+	int		i;
 
-	buf = *begin_list;
-	while (buf)
+	i = 0;
+	ret = 1;
+	buf[0] = '\0';
+	size = BUFFER_SIZE;
+	while (ret)
 	{
-		buf = *begin_list;
-		if ((*cmp)(buf->data, data_ref) == 0)
-		{
-			(*free_fct)(buf->data);
-			free(buf);
-			buf = buf->next;
-		}
-		else
-			buf = buf->next;
+		while (buf[i])
+			write (1, &(buf[i++]), 1);
+		ret = read(fd, buf, size);
+		buf[ret] = '\0';
+		i = 0;
 	}
-}/// a refaire
+}

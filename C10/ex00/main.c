@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/12 16:22:48 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/14 03:58:57 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/14 22:12:19 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/14 22:34:13 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_files.h"
 
-void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), \
-void (*free_fct)(void *))
+int	main(int ac, char *argv[])
 {
-	t_list	*buf;
+	int		fd;
 
-	buf = *begin_list;
-	while (buf)
+	if (ac > 2)
+		write(1, "Too many arguments.\n", 21);
+	else if (!argv[1])
+		write(1, "File name missing.\n", 20);
+	else
 	{
-		buf = *begin_list;
-		if ((*cmp)(buf->data, data_ref) == 0)
-		{
-			(*free_fct)(buf->data);
-			free(buf);
-			buf = buf->next;
-		}
+		fd = open(argv[1], O_RDONLY);
+		if (fd == -1)
+			write(1, "Cannot read file.\n", 19);
 		else
-			buf = buf->next;
+		{
+			ft_display_file(fd);
+			close(fd);
+		}
 	}
-}/// a refaire
+	return (0);
+}

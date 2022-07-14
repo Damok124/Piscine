@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   ft_files.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zharzi <zharzi@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/12 16:22:48 by zharzi            #+#    #+#             */
-/*   Updated: 2022/07/14 03:58:57 by zharzi           ###   ########.fr       */
+/*   Created: 2022/07/14 22:13:07 by zharzi            #+#    #+#             */
+/*   Updated: 2022/07/14 22:34:06 by zharzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#ifndef FT_FILES_H
+# define FT_FILES_H
 
-void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), \
-void (*free_fct)(void *))
-{
-	t_list	*buf;
+# define BUFFER_SIZE 10
 
-	buf = *begin_list;
-	while (buf)
-	{
-		buf = *begin_list;
-		if ((*cmp)(buf->data, data_ref) == 0)
-		{
-			(*free_fct)(buf->data);
-			free(buf);
-			buf = buf->next;
-		}
-		else
-			buf = buf->next;
-	}
-}/// a refaire
+# include <unistd.h>
+# include <fcntl.h>
+
+void	ft_display_file(int fd);
+
+#endif
